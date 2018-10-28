@@ -93,7 +93,7 @@ class App extends React.Component {
           }
         }}
       >
-        <BrowserRouter>
+        <BrowserRouter basename="/bdxio-timekeeper">
           <React.Fragment>
             <Navigation />
             <Switch>
