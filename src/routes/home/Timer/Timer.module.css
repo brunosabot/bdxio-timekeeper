@@ -1,0 +1,35 @@
+.Buttons {
+  padding: 40px 0 20px 0;
+  display: flex;
+  justify-content: center;
+}
+.Button {
+  -webkit-appearance: none;
+  background: #0000;
+  border-radius: 0;
+  border: 2px solid #2b2d42;
+  box-sizing: border-box;
+  color: #2b2d42;
+  cursor: pointer;
+  font-size: 0.75rem;
+  font-weight: bold;
+  height: 40px;
+  margin: 0 10px 0 10px;
+  outline: 0;
+  padding: 0.85em 1em;
+  text-align: center;
+  text-transform: uppercase;
+  transition: all 0.25s ease-out;
+  width: 60px;
+}
+.Button:hover {
+  background: #2b2d42;
+  color: #ffffff;
+}
+.Timer {
+  text-align: center;
+  font-size: 2em;
+  font-weight: bold;
+  margin: 20px 0;
+  transition: all 0.25s ease-out;
+}

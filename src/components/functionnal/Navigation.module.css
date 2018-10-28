@@ -1,0 +1,11 @@
+.Navigation {
+  background-image: linear-gradient(to right, #cc0625, #fac319);
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+}
+.Links {
+  padding: 8px;
+}

@@ -1,0 +1,71 @@
+.List {
+  text-align: center;
+  padding: 40px 0;
+}
+.Button {
+  -webkit-appearance: none;
+  background: #0000;
+  border-radius: 0;
+  border: 2px solid #2b2d42;
+  box-sizing: border-box;
+  color: #2b2d42;
+  cursor: pointer;
+  font-size: 0.75rem;
+  font-weight: bold;
+  height: 40px;
+  margin: 0 10px 10px 10px;
+  outline: 0;
+  padding: 0.85em 1em;
+  text-align: center;
+  text-transform: uppercase;
+  transition: all 0.25s ease-out;
+  width: 80%;
+}
+.Button:hover {
+  background: #2b2d42;
+  color: #ffffff;
+}
+.Input {
+  -webkit-appearance: none;
+  background: #0000;
+  border-radius: 0;
+  border: 2px solid #2b2d42;
+  box-sizing: border-box;
+  color: #2b2d42;
+  font-size: 0.75rem;
+  font-weight: bold;
+  height: 40px;
+  margin: 0 10px 10px 10px;
+  padding: 0.85em 1em;
+  text-transform: uppercase;
+  width: 80%;
+}
+.Timings {
+  border-top: 2px solid #f0f0f0;
+  max-width: 100%;
+  margin: 30px auto 0 auto;
+}
+.Timing {
+  border-bottom: 2px solid #f0f0f0;
+  box-sizing: border-box;
+  display: flex;
+  height: 48px;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.25s ease-out;
+  padding: 0 16px 0 24px;
+}
+.Timing:hover {
+  background: #f4f4f4;
+}
+.RemoveButton {
+  fill: #000000;
+  background: transparent;
+  cursor: pointer;
+  border: 0;
+  padding: 4px;
+  transition: all 0.25s ease-out;
+}
+.RemoveButton:hover {
+  fill: #cc0625;
+}
