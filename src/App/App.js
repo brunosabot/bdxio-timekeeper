@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter, Switch, Redirect, Route } from "react-router-dom";
 import differenceInSeconds from "date-fns/difference_in_seconds";
 import Navigation from "../components/functionnal/Navigation";
+import useBodyVibrate from "../components/hooks/bodyVibrate";
 import Home from "../routes/home";
 import Settings from "../routes/settings";
 import AppContext from "./AppContext";
@@ -71,6 +72,10 @@ class App extends React.Component {
 
   render() {
     const { alert, currentTiming, startTiming, timings } = this.state;
+
+    document.title = `${currentTiming} - BDX I/O Timekeeper`;
+    useBodyVibrate(alert);
+
     return (
       <AppContext.Provider
         value={{
