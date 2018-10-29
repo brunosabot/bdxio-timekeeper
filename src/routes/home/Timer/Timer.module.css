@@ -33,3 +33,35 @@
   margin: 20px 0;
   transition: all 0.25s ease-out;
 }
+.TimerActive {
+  font-size: 3em;
+  background: linear-gradient(to right, #cc0625, #fac319);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.AlertButton {
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-name: bdx;
+  animation-timing-function: linear;
+  border: 2px solid #2b2d42;
+  display: flex;
+  outline: 0;
+  padding: 16px 48px;
+  margin: 40px auto 0 auto;
+}
+.AlertButtonIcon {
+  fill: #2b2d42;
+}
+
+@keyframes bdx {
+  0% {
+    background-color: #cc0625;
+  }
+  50% {
+    background-color: #fac319;
+  }
+  100% {
+    background-color: #cc0625;
+  }
+}

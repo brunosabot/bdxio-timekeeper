@@ -1,5 +1,6 @@
 import React from "react";
 import AppContext from "../../../App/AppContext";
+import { ReactComponent as Check } from "../../../components/svg/check.svg";
 import styles from "./Timer.module.css";
 
 const Timer = () => (
@@ -13,9 +14,14 @@ const Timer = () => (
             </button>
           ))}
         </div>
-        <div className={styles.Timer} style={values.alert ? { color: "red", fontSize: "3em" } : {}}>
+        <div className={`${styles.Timer} ${values.alert ? styles.TimerActive : ""}`}>
           {values.currentTiming}
         </div>
+        {values.alert ? (
+          <button className={styles.AlertButton} onClick={actions.viewAlert}>
+            <Check className={styles.AlertButtonIcon} />
+          </button>
+        ) : null}
       </React.Fragment>
     )}
   </AppContext.Consumer>

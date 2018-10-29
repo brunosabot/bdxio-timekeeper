@@ -40,31 +40,33 @@ class App extends React.Component {
 
     window.clearInterval(this.interval);
     this.interval = window.setInterval(() => {
-      const { startTiming } = this.state;
+      const { alert, startTiming } = this.state;
 
       const diff = duration * 60 - differenceInSeconds(new Date(), startTiming);
       const hours = `${Math.floor(diff / 3600)}`.padStart(2, "0");
       const minutes = `${Math.floor((diff - hours * 3600) / 60)}`.padStart(2, "0");
       const seconds = `${diff - hours * 3600 - minutes * 60}`.padStart(2, "0");
-      const currentTiming = `${hours}:${minutes}:${seconds}`;
-      let alert = false;
+      const newState = { currentTiming: `${hours}:${minutes}:${seconds}` };
 
-      if ([1800, 1200, 600, 300, 120].indexOf(diff) > -1) {
+      if ([1800, 1200, 600, 300, 120, 60].indexOf(diff) > -1) {
         // In minutes [30, 20, 10, 5, 2]
-        window.navigator.vibrate([1000]);
-        alert = true;
-      } else if ([60].indexOf(diff) > -1) {
-        // In minutes [1]
-        window.navigator.vibrate([1000, 200, 1000]);
-        alert = true;
+        window.navigator.vibrate(800);
+        newState.alert = true;
       } else if (diff === 0) {
         window.clearInterval(this.interval);
-        window.navigator.vibrate([1000, 200, 1000, 200, 1000]); // Terminé
-        alert = true;
+        window.navigator.vibrate([2000, 200, 2000, 200, 2000]); // Terminé
+        newState.alert = true;
+      } else if (alert === true) {
+        window.navigator.vibrate(0); // Clear previous vibrations
+        window.navigator.vibrate(800); // Add a new vibration because the timer is still unseen
       }
 
-      this.setState({ alert, currentTiming });
+      this.setState(newState);
     }, 1000);
+  };
+
+  viewAlert = () => {
+    this.setState({ alert: false });
   };
 
   render() {
@@ -82,7 +84,8 @@ class App extends React.Component {
             addTiming: this.addTiming,
             endTiming: this.endTiming,
             removeTiming: this.removeTiming,
-            startTiming: this.startTiming
+            startTiming: this.startTiming,
+            viewAlert: this.viewAlert
           }
         }}
       >
