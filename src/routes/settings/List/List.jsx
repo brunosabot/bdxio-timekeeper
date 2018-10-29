@@ -5,7 +5,7 @@ import { ReactComponent as Close } from "../../../components/svg/close.svg";
 
 const List = () => {
   const [timing, setTiming] = React.useState("30");
-  console.log(timing);
+
   return (
     <AppContext.Consumer>
       {({ actions, values }) => (
