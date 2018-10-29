@@ -20,6 +20,8 @@ class App extends React.Component {
     timings: defaultTmings
   };
 
+  interval = 0;
+
   addTiming = value => () => {
     const { timings: oldTimings } = this.state;
     const timings = [...oldTimings, value].sort((a, b) => (a > b ? 1 : -1));
@@ -36,6 +38,7 @@ class App extends React.Component {
   startTiming = duration => () => {
     this.setState({ alert: false, startTiming: new Date(), duration });
 
+    window.clearInterval(this.interval);
     this.interval = window.setInterval(() => {
       const { startTiming } = this.state;
 
