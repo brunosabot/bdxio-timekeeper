@@ -49,23 +49,13 @@ class App extends React.Component {
       const currentTiming = `${hours}:${minutes}:${seconds}`;
       let alert = false;
 
-      if (diff === 1800) {
-        window.navigator.vibrate([1000]); // 30 minutes
+      if ([1800, 1200, 600, 300, 120].indexOf(diff) > -1) {
+        // In minutes [30, 20, 10, 5, 2]
+        window.navigator.vibrate([1000]);
         alert = true;
-      } else if (diff === 1200) {
-        window.navigator.vibrate([1000]); // 20 minutes
-        alert = true;
-      } else if (diff === 600) {
-        window.navigator.vibrate([1000]); // 10 minutes
-        alert = true;
-      } else if (diff === 300) {
-        window.navigator.vibrate([1000]); // 5 minutes
-        alert = true;
-      } else if (diff === 120) {
-        window.navigator.vibrate([1000]); // 2 minutes
-        alert = true;
-      } else if (diff === 60) {
-        window.navigator.vibrate([1000, 200, 1000]); // 1 minutes
+      } else if ([60].indexOf(diff) > -1) {
+        // In minutes [1]
+        window.navigator.vibrate([1000, 200, 1000]);
         alert = true;
       } else if (diff === 0) {
         window.clearInterval(this.interval);
