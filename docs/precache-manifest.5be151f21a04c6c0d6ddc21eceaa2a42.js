@@ -20,19 +20,19 @@ self.__precacheManifest = [
     "url": "/bdxio-timekeeper/static/js/runtime~main.1f8992f6.js"
   },
   {
-    "revision": "1439c523365435acd3cf",
-    "url": "/bdxio-timekeeper/static/js/main.1439c523.chunk.js"
+    "revision": "b38af1206087e025ef06",
+    "url": "/bdxio-timekeeper/static/js/main.b38af120.chunk.js"
   },
   {
     "revision": "e51dfe52ba49685dc18e",
     "url": "/bdxio-timekeeper/static/js/1.e51dfe52.chunk.js"
   },
   {
-    "revision": "1439c523365435acd3cf",
-    "url": "/bdxio-timekeeper/static/css/main.38f6be62.chunk.css"
+    "revision": "b38af1206087e025ef06",
+    "url": "/bdxio-timekeeper/static/css/main.123b5eed.chunk.css"
   },
   {
-    "revision": "b2060c88d0e77854ee8495b5c54411fe",
+    "revision": "5a2a4d37ee2b091fdf96b0ca5d813e62",
     "url": "/bdxio-timekeeper/index.html"
   }
 ];
