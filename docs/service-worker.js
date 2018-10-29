@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.2/workbox-sw.js");
 
 importScripts(
-  "/bdxio-timekeeper/precache-manifest.7cfb81656efe380868ba8a36182e8866.js"
+  "/bdxio-timekeeper/precache-manifest.61023732190c6de9caa2b10a0794d796.js"
 );
 
 workbox.clientsClaim();
