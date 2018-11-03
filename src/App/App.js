@@ -41,15 +41,23 @@ class App extends React.Component {
 
     window.clearInterval(this.interval);
     this.interval = window.setInterval(() => {
-      const { alert, startTiming } = this.state;
+      const { alert, currentTiming, startTiming } = this.state;
 
       const diff = duration * 60 - differenceInSeconds(new Date(), startTiming);
       const hours = `${Math.floor(diff / 3600)}`.padStart(2, "0");
       const minutes = `${Math.floor((diff - hours * 3600) / 60)}`.padStart(2, "0");
       const seconds = `${diff - hours * 3600 - minutes * 60}`.padStart(2, "0");
-      const newState = { currentTiming: `${hours}:${minutes}:${seconds}` };
+      const newState = {};
 
-      if ([1800, 1200, 600, 300, 120, 60].indexOf(diff) > -1) {
+      if (currentTiming !== "1/2" || alert === false) {
+        newState.currentTiming = `${hours}:${minutes}:${seconds}`;
+      }
+
+      if ([(duration * 60) / 2].indexOf(diff) > -1) {
+        window.navigator.vibrate(800);
+        newState.currentTiming = "1/2";
+        newState.alert = true;
+      } else if ([1800, 1200, 600, 300, 120, 60].indexOf(diff) > -1) {
         // In minutes [30, 20, 10, 5, 2]
         window.navigator.vibrate(800);
         newState.alert = true;
